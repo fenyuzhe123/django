@@ -1,0 +1,70 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+
+
+	
+	
+<div  ng-app="myApp" ng-controller="customersCtrl">
+<p> Filter: <input type="text" ng-model="Name"></p> <P>Last update: {{ updatedate }}</p>
+<table class="table table-bordered" style="font-size:10" >
+   <thead>
+<tr>
+                        <th> createdtime
+                                <button type="button" class="btn btn-default" ng-click="f='createdtime'; rev=!rev ">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> username
+                                <button type="button" class="btn btn-default" ng-click="f='lasttransition'; rev=!rev" >
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> tag
+                                <button type="button" class="btn btn-default" ng-click="f='tag'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> abc
+                                <button type="button" class="btn btn-default" ng-click="f='details'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+</tr>
+   </thead>
+
+<tbody >
+  <tr ng-repeat="x in names| filter:Name| orderBy: f : rev"  ng-class="{'green_color': x.tag == 'created', 'red_color': x.tag == 'removed'}"> 
+        <td><%x.createdtime%></td>
+        <td><%x.username%></td>
+        <td><%x.tag%></td>
+        <td><%x.detailsds%></td>
+
+
+  </tr>
+
+</tbody>
+
+</table>
+</div> 
+ 
+ 
+ 
+ 
+<script>
+var myApp = angular.module('myApp', []);
+
+
+// App config
+myApp.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('<%');
+	$interpolateProvider.endSymbol('%>');
+	});
+myApp.controller('customersCtrl', function($scope, $http) {
+   $http.get("/creation_list_data")
+
+   .success(function (response)
+        {$scope.names = response.records;});
+});
+</script>
+
+{% endblock %}
+
+

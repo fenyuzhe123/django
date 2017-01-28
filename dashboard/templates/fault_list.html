@@ -1,0 +1,91 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+
+
+	
+	
+<div  ng-app="myApp" ng-controller="customersCtrl">
+<p> Filter: <input type="text" ng-model="Name"></p> <P>Last update: {{ updatedate }}</p>
+<span class="label label-danger">Critical</span>
+<b>{{ critical }}</b>
+<span class="label label-warning">Major</span>
+<b>{{ major }}</b>
+<span class="label label-success">Minor</span>
+<b>{{ minor }}</b>
+<span class="label label-primary">Warning</span>
+<b>{{ warning }}</b>
+
+
+
+<table class="table table-bordered" style="font-size:10" >
+   <thead>
+<tr>
+                        <th> ucs
+                                <button type="button" class="btn btn-default" ng-click="f='ucs'; rev=!rev ">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> lasttransition
+                                <button type="button" class="btn btn-default" ng-click="f='lasttransition'; rev=!rev" >
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> severity
+                                <button type="button" class="btn btn-default" ng-click="f='severity'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> type
+                                <button type="button" class="btn btn-default" ng-click="f='type'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> dn
+                                <button type="button" class="btn btn-default" ng-click="f='dn'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> descr
+                                <button type="button" class="btn btn-default" ng-click="f='descr'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+												
+</tr>
+   </thead>
+
+<tbody >
+  <tr ng-repeat="x in names| filter:Name| orderBy: f : rev"  ng-class="{'red_color': x.severity == 'critical', 'blue_color': x.severity == 'warning' , 'orange_color': x.severity == 'major','yellow_color': x.severity == 'minor' }"> 
+        <td><%x.Ucs%></td>
+        <td><%x.lasttransition%></td>
+        <td><%x.severity%></td>
+		<td><%x.type%></td>
+		<td><%x.dn%></td>
+		<td><%x.descr%></td>			
+
+  </tr>
+
+</tbody>
+
+</table>
+</div> 
+ 
+ 
+ 
+ 
+<script>
+var myApp = angular.module('myApp', []);
+
+
+// App config
+myApp.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('<%');
+	$interpolateProvider.endSymbol('%>');
+	});
+myApp.controller('customersCtrl', function($scope, $http) {
+   $http.get("/fault_list_data")
+
+   .success(function (response)
+        {$scope.names = response.records;});
+});
+</script>
+
+{% endblock %}
+
+

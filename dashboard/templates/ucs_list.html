@@ -1,0 +1,144 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+	
+	
+<div  ng-app="myApp" ng-controller="customersCtrl">
+<b> CSV download</b>
+
+<button type="button" onclick="window.open('ftp:/10.107.100.196/UCSInventory.zip')" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+</button>
+
+<p> Filter: <input type="text" ng-model="Name"></p> <P>Last update: {{ updatedate }}</p>
+
+<table class="table table-bordered" style="font-size:10" >
+   <thead>
+<tr>
+                        <th> Ucs_Domain
+                                <button type="button" class="btn btn-default" ng-click="f='Ucs'; rev=!rev ">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> chassis_SN
+                                <button type="button" class="btn btn-default" ng-click="f='chassis_SN'; rev=!rev" >
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> chassis
+                                <button type="button" class="btn btn-default" ng-click="f='chassis_ID'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> Slot
+                                <button type="button" class="btn btn-default" ng-click="f='SlotId'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> Serial
+                                <button type="button" class="btn btn-default" ng-click="f='Serial'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> usrLbl
+                                <button type="button" class="btn btn-default" ng-click="f='usrLbl'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> Model
+                                <button type="button" class="btn btn-default" ng-click="f='model'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> Adaptor
+                                <button type="button" class="btn btn-default" ng-click="f='Adaptor'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> IOM
+                                <button type="button" class="btn btn-default" ng-click="f='IOM'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> CPU
+                                <button type="button" class="btn btn-default" ng-click="f='CPU'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> Sockets		
+                                <button type="button" class="btn btn-default" ng-click="f='NumOfCpus'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> Cores
+                                <button type="button" class="btn btn-default" ng-click="f='NumOfCores'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> Memory
+                                <button type="button" class="btn btn-default" ng-click="f='AvailableMemory'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> AssignedToDn
+                                <button type="button" class="btn btn-default" ng-click="f='AssignedToDn'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> Firmware
+                                <button type="button" class="btn btn-default" ng-click="f='Firmware'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						
+						
+</tr>
+   </thead>
+
+<tbody >
+  <tr ng-repeat="x in names| filter:Name| orderBy: f : rev"> 
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.Ucs %></td>
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.chassis_SN %></td>
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.chassis_ID %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.SolotId %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.Serial %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.usrLbl %></td>	
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.Model %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.Adaptor %></td>	
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.IOM %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.CPU %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.NumOfCpus %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.NumOfCores %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.AvailableMemory %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.AssignedToDn %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.Firmware %></td>
+  </tr>
+
+</tbody>
+
+</table>
+</div> 
+ 
+ 
+ 
+ 
+<script>
+var myApp = angular.module('myApp', []);
+
+
+// App config
+myApp.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('<%');
+	$interpolateProvider.endSymbol('%>');
+	});
+myApp.controller('customersCtrl', function($scope, $http) {
+   $http.get("/ucs_list_data")
+
+   .success(function (response)
+        {$scope.names = response.records;});
+});
+</script>
+
+{% endblock %}
+
+

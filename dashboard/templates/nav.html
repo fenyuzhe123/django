@@ -1,0 +1,119 @@
+<nav class="main-navigation">
+        <div class="row">
+        <div class="col-md-12">
+        <ul class="nav nav-tabs">
+                <li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Dashboard
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+                                        <li><a href="{% url 'total_ticket' %}" >Total tickets per month</a></li>
+                                        <li><a href="{% url 'total_add' %}" >Total space requests(add/expand) per month</a></li>
+                                        <li><a href="{% url 'overall' %}" >Overall Capacity utilization for each DC</a></li>
+                                        <li><a href="{% url 'total_lun' %}" >Total LUNs quantity/capacity for each DC(block)</a></li>
+                                        <li><a href="{% url 'total_cifs' %}" >Total CIFS quantity/capacity for each DC(File)</a></li>
+                                        <li><a href="{% url 'total_nfs' %}" >Total NFS quantity/capacity for each DC(File)</a></li>
+                        </ul>
+                </li>
+
+
+				<li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Capacity report
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+                                        <li><a href="{% url 'vnx' %}" >EMC VNX</a></li>
+                                        <li><a href="{% url 'vmax' %}" >EMC VMAX</a></li>
+										<li><a href="{% url 'xtremio' %}" >EMC XtremIO</a></li>
+                                        <li><a href="{% url 'vnx_site_all' %}" >Sory by Site</a></li>
+                        </ul>
+                </li>
+
+
+				<li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Inventory
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+                                        <li><a href="{% url 'env' %}" >Storage Inventory</a></li>
+                                        <li><a href="{% url 'mds' %}" >MDS Inventory</a></li>
+                                        <li><a href="{% url 'mgt' %}" >Management hosts</a></li>
+                        </ul>
+                </li>
+				
+				
+				<li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         MDS_Zoning
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+                                        <li><a href="{% url 'mds_zone' %}" >MDS_Zoning</a></li>
+                                        <li><a href="{% url 'array_port' %}" >Storage ports</a></li>
+
+                        </ul>
+                </li>
+				
+				
+	
+                <li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Script check result
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+                                        <li><a href="{% url 'check_list' %}" >Script check result</a></li>
+                        </ul>
+                </li>
+
+                <li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Products Layout
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+                                        <li><a href="{%  url 'vm_product_layout' %}" >Products Layout (block for ESXi Hosts)</a></li>
+										<li><a href="{%  url 'bm_product_layout' %}" >Products Layout (block for Bare metal)</a></li>
+										<li><a href="{%  url 'fs_product_layout' %}" >Products Layout (File)</a></li>
+										<li><a href="{%  url 'overall_product_layout' %}" >Products Layout (Overall)</a></li>
+                        </ul>
+                </li>
+
+
+                <li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Capacity Change Record
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+                                        <li><a href="{% url 'capacity_change' %}" >Capacity Report</a></li>
+                        </ul>
+                </li>
+
+
+
+                <li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Toolkit
+                        <b class="caret"></b>
+                        </a> 
+                                <ul class="dropdown-menu">
+                                        <li><a href="{% url 'env_query' %}" >Inventory Qurey</a></li>
+                                        <li><a href="{% url 'lun_info' %}" >LUN Qurey</a></li>
+                                        <li><a href="{% url 'host_list' %}" >SG/host Qurey</a></li>
+										<li><a href="{% url 'nas_list' %}" >NAS Qurey</a></li>
+										<li><a href="{% url 'fs' %}" >Mapping File system to product</a></li>
+										<li><a href="{% url 'block' %}" >Mapping block LUN to product</a></li>
+                        </ul>
+                </li>
+
+
+
+        </ul>
+        </div>
+        </div>
+</nav>
+<h1>{{ title }}</h1>

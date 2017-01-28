@@ -1,0 +1,60 @@
+<nav class="main-navigation">
+        <div class="row">
+        <div class="col-md-12">
+        <ul class="nav nav-tabs">
+
+		       
+			   <li class='active'><a href="#">Home</a></li>
+			  			   
+		       <li><a href="{% url 'ucs_list' %}">UCS Inventory</a></li>
+               
+               <li><a href="{% url 'vm_list' %}">VM Inventory</a></li>
+               
+			   <li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Report
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+                                        <li>Dashboard</a></li>
+                                        <li>Available Blades</a></li>
+                                        <li>Idle VMs</a></li>
+										<li>Powered Off VMs</a></li>
+                                </ul>
+                </li>
+		
+
+				<li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         Toolkit
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+								        <li><font color="red"><a href="{% url 'inc_list' %}">Incident</a></font></li>
+										<li><font color="red"><a href="{% url 'change_list' %}">Change</a></font></li>
+                                        <li><font color="red"><a href="{% url 'fault_list' %}">UCS Faults</a></font></li>
+									    <li>vHealth</a></li>
+										<li><font color="red"><a href="{% url 'event_list' %}">Operation Events</a></font></li>
+                                        <li><font color="red"><a href="{% url 'creation_list' %}">VM Creation&&Deletion</a></font></li>
+                                </ul>
+                </li>
+		
+		
+				<li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                         RVTools
+                        <b class="caret"></b>
+                        </a>
+                                <ul class="dropdown-menu">
+                                        <li>Las Vegas</a></li>
+                                        <li>Ashburn</a></li>
+										<li>Toronto</a></li>
+                                        <li>Kelowna</a></li>
+                                </ul>
+                </li>
+				
+				
+        </ul>
+        </div>
+        </div>
+</nav>

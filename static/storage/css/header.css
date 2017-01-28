@@ -1,0 +1,28 @@
+.main-header{height:100px;max-width: 100%;background-color:#666666;}
+a.logo{ display:inline-block;width:236px; float:left;height:100px; background:url(/static/storage/images/active_network_logo.png) no-repeat center center;}
+.head-name{ height:100px;line-height:35px;color: #fff;margin: 30px 0 15px 0;text-align:left;font-size: 35px;font-family: sans-serif;}
+.main-navigation{text-align:center;background:#ffffff;border-top: 1px solid #ebebeb;margin-bottom:5px;}
+.footer{float:bottom; height:125px; padding:2px 0; background-color:#e4e5e6; margin-top:3px; clear:both;}
+a.logo_gray{display:inline-block;width:179px; float:left;height:110px; background:url(/static/storage/images/logo_gray.png) no-repeat center center; border-right:1px solid #ccc;}
+.footer_box{width:100%;margin:0 auto;}
+.footer_nav{ float:left;border-left:1px solid #fff;width:359px;height:110px; padding-left:40px;}
+.footer_nav a{ display:inline-block; float:left; width:40%; margin-right:5%; text-align:left; font-size:11px;text-decoration:none; line-height:26px; color:#666;}
+.footer_nav a span{ font-family:"MS Serif", "New York", serif; font-size:10px; font-weight:bold; margin-right:5px;-webkit-text-size-adjust:none;}
+.footer_nav a:hover{ color:#003e7e; }
+.footer_nav a:hover span{ color:#ffc425;}
+
+.footer_copyright{text-align:center; color:#666;padding-top:10px; font-size:11px;}
+.footer_copyright p{ margin:0; line-height:30px;}
+.footer_copyright p span{ font-weight:bold;}
+.footer_copyright p a{ text-decoration:none; color:#666; font-size:11px;}
+.footer_copyright p a:hover{ color:#003e7e; text-decoration:underline;}
+.charge_table {text-align:right;padding-right:50px;}
+.charge_table_td {text-align:right;padding-right:50px;}
+.charge_table_dd {text-align:left;}
+.icon_complete	{ display:inline-block; *display:inline; *zoom:1; overflow:hidden; width:20px; height:16px; vertical-align:middle; background:url(/static/storage/images/images.png) no-repeat -60px 0;} 
+.icon_error {background: url("/static/storage/images/images.png") no-repeat scroll -20px 0 rgba(0, 0, 0, 0);display: inline-block;height: 16px;overflow: hiddenvertical-align: middle;width: 20px;}
+.red_color{ background-color: ffb3b3; color:black; }
+.orange_color{ background-color: ffd699 ;color:black;}
+.blue_color{ background-color: cce6ff ;color:black;}
+.yellow_color{ background-color: ffff99; color:black;}
+.green_color{ background-color: ddff99; color:black;}

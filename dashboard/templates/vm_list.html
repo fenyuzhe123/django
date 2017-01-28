@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+
+
+<div  ng-app="myApp" ng-controller="customersCtrl">
+
+
+<b> CSV download</b>
+
+<button type="button" onclick="location.href='ftp:/10.119.237.248/VMinventory.zip'" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+</button>
+<em>use ctrl+F to search information </em>
+
+
+<table class="table table-bordered" style="font-size:9" >
+   <thead>
+<tr>
+                        <th> Virtual Machine Name
+				                
+                        <th> Guest OS Name
+
+                        <th> VMStatus
+
+                        <th> OS_Family
+
+                        <th> NumSocket
+
+						<th> Total_Core
+
+						<th> MemoryMB
+
+						<th> IpAddress
+
+						<th> MACAddress
+
+						<th> PortGroup
+
+						<th> VLAN_ID
+
+						<th> Network_Adapter
+
+						<th> VMDisk_Count
+
+						<th> ESXHost
+
+						<th> ClusterName
+
+						<th> DataCenter
+						
+						<th> vCenter
+						
+						<th> GuestId
+
+						<th> VMXpath
+
+						<th> VMTools_verison
+						
+						<th> VMTools_Status
+
+						<th> VMDisk_AllocatedInKB
+
+						<th> Total_Disk_UsageInKB
+
+						<th> Product
+
+						<th> Market
+								
+</tr>
+   </thead>
+
+<tbody >
+  <tr ng-repeat="x in names | filter:Name| orderBy: f : rev">
+        <td  class="charge_table_td" style="padding-right:5px"><% x.Virtual_Machine_Name %></td>
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.Guest_OS_Name %></td>
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.VMStatus %></td>
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.OS_Family %></td>
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.NumSocket %></td>
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.Total_Core %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.MemoryMB %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.IpAddress %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.MAC %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.Network %></td>		
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.VLAN_ID %></td>
+		<td  class="charge_table_td" style="padding-right;5px;"><% x.Network_Adapter %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.VMDisk_Count %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.ESXHost %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.ClusterName %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.DataCenter %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.Element_Manager %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.GuestId %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.VMXpath %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.VMTools_verison %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.VMTools_Status %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.VMDisk_AllocatedInKB %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.Total_Disk_UsageInKB %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.Product %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.Market %></td>
+  </tr>
+
+</tbody>
+
+</table>
+</div> 
+
+<div id="loader"></div>
+
+<script>
+var myApp = angular.module('myApp', []);
+
+
+// App config
+myApp.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('<%');
+	$interpolateProvider.endSymbol('%>');
+	});
+myApp.controller('customersCtrl', function($scope, $http) {
+   $http.get("/vm_list_data")
+   
+   .success(function (response)
+        {$scope.names = response.records;});
+});
+
+
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 13000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myApp").style.display = "block";
+}
+
+</script>
+
+
+
+{% endblock %}

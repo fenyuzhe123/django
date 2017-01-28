@@ -1,0 +1,210 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Headlines */
+.Highlighted_IT_Employees{ font-size:11px;}
+.Highlighted_IT_Employees li{ display:block; overflow:hidden; zoom:1;line-height:22px; text-align:left; border:1px #e3e3e3 solid; margin-bottom:10px;background-color:#f7f7f7; padding:5px;list-style:none;-webkit-border-radius:5px;-moz-border-radius:5px;}
+/*修改*/.Highlighted_IT_Employees li:hover{ background-color:#E7F0F8; border:1px #B7D3E8 solid; color:#333;cursor:pointer;}
+.Highlighted_IT_Employees li img{ margin:10px 20px 10px 10px; float:left; display:block;}
+.Highlighted_IT_Employees li span{display: block; float:left;margin:5px 10px 5px 0;padding-left:10px;color:#444;line-height:12px;border-left:1px solid #444;}
+.Highlighted_IT_Employees li span.name{width:200px;font-weight:bold; font-size:14px; font-family:"Times New Roman", Times, serif; text-align:left;border:none; color:#003e7e;padding-left:0;}
+.Highlighted_IT_Employees li p{width:82%;display:inline-block; margin:0; text-align:left; }
+.Highlighted_IT_Employees li:nth-child(2) span{ margin-top:15px;}
+.Highlighted_IT_Employees li:nth-child(3) span{ margin-top:15px;}
+
+
+
+/*Metrics*/
+.Overall_IT_Department_Rating {width:310px; float:left;margin-right:20px;vertical-align:top;}
+
+.Quarterly_IT_Performance_DIV {width:450px;float:left;}
+.Quarterly_IT_Performance {width:100%}
+.Quarterly_IT_Performance tr td:nth-child(1){width:23%;}
+.Quarterly_IT_Performance tr td:nth-child(2){width:11%;}
+.Quarterly_IT_Performance tr td:nth-child(3){width:11%;}
+.Quarterly_IT_Performance tr td:nth-child(4){width:11%;}
+.Quarterly_IT_Performance tr td:nth-child(5){width:11%;}
+.Quarterly_IT_Performance tr td:nth-child(6){width:11%;}
+.Quarterly_IT_Performance tr td:nth-child(7){width:11%;}
+.Quarterly_IT_Performance tr td:nth-child(8){width:11%;}
+.Quarterly_IT_Performance tr:nth-child(n+2) td:nth-child(1){ text-align:left; padding-left:5px;}
+.Quarterly_IT_Performance tr:nth-child(n+2) td:nth-child(n+2){ text-align:right; padding-left:5px;}
+
+.IT_Monthly_KPIs table{width:49%; float:left; margin-right:2%;}
+.IT_Monthly_KPIs table:nth-child(2n){margin-right:0;}
+.IT_Monthly_KPIs table tr td:nth-child(1){width:48%;}
+.IT_Monthly_KPIs table tr td:nth-child(2){width:21%;}
+.IT_Monthly_KPIs table tr td:nth-child(3){width:21%;}
+.IT_Monthly_KPIs table tr td:nth-child(4){width:10%;}
+.IT_Monthly_KPIs table tr:nth-child(n+2) td:nth-child(1){ text-align:left; padding-left:5px;}
+.IT_Monthly_KPIs table tr:nth-child(n+2) td:nth-child(2){ text-align:right; padding-right:5px;}
+.IT_Monthly_KPIs table tr:nth-child(n+2) td:nth-child(3){ text-align:right; padding-right:5px;}
+.IT_Monthly_KPIs table tr:nth-child(n+2) td:nth-child(4){}
+
+.IT_Turnover_Analysis {width:600px;float:left; margin-right:20px; vertical-align:top;}
+
+.IT_Workforce_DIV{width:160px;float:left;}
+.IT_Workforce_DIV div.swf{text-align:center;}
+.IT_Workforce{width:100%;}
+.IT_Workforce tr td:nth-child(1){width:30%;}
+.IT_Workforce tr td:nth-child(2){width:27%;}
+.IT_Workforce tr td:nth-child(3){width:27%;}
+.IT_Workforce tr td:nth-child(4){width:16%;}
+
+
+/*SA_Master_Availability*/
+.Transactions_SLA_Met_Status{width:49%; margin-right:2%; float:left; }
+.Website_SLA_Met_Status{width:49%;  float:left;}
+.Availability_Performance_by_SD_Area{width:330px; float:left; margin-right:20px;}
+.P_And_T{width:430px; float:left;}
+.Products_with_Missed_SLAs{width:58%; float:left; margin-right:2%;}
+.Products_with_Missed_SLAs tr td:nth-child(1){width:40%;}
+.Products_with_Missed_SLAs tr td:nth-child(2){width:22%;}
+.Products_with_Missed_SLAs tr td:nth-child(3){width:22%;}
+.Products_with_Missed_SLAs tr td:nth-child(4){width:16%;}
+.Products_with_Missed_SLAs table tr:nth-child(n+2) td:nth-child(1){ text-align:left; padding-left:5px;}
+
+.Top_10_Latency_Products{width:40%; float:left;}
+.Top_10_Latency_Products tr td:nth-child(1){width:70%;}
+.Top_10_Latency_Products tr td:nth-child(2){width:30%;}
+.Top_10_Latency_Products table tr:nth-child(n+2) td:nth-child(1){ text-align:left; padding-left:5px;}
+
+/*SA-Product Availability*/
+.Product_Availability table{width:49%; margin-right:2%; float:left;}
+.Product_Availability table:last-child{ margin-right:0;}
+
+.Product_Availability table td:nth-child(1){width:40%;}
+.Product_Availability table td:nth-child(2){width:22%;}
+.Product_Availability table td:nth-child(3){width:22%;}
+.Product_Availability table td:nth-child(4){width:16%;}
+.Product_Availability table tr:nth-child(n+2) td:nth-child(1){ text-align:left; padding-left:5px;}
+
+/*SA-Incident*/
+.S_and_O div{width:49%; float:left; margin-right:2%;}
+.S_and_O div:last-child{ margin-right:0;}
+.Current_Month table tr td:nth-child(1){width:12%;}
+.Current_Month table tr td:nth-child(2){width:12%;}
+.Current_Month table tr td:nth-child(3){width:10%;}
+.Current_Month table tr td:nth-child(4){width:10%;}
+.Current_Month table tr td:nth-child(n+5){width:14%;}
+.Current_Month table tr:nth-child(n+2) td:nth-child(n+5){ text-align:left; padding-left:5px;}
+
+/*Project_Summary */
+
+.Active_Projects table td:nth-child(1){width:28%;}
+.Active_Projects table td:nth-child(2){width:7%;}
+.Active_Projects table td:nth-child(3){width:7%;}
+.Active_Projects table td:nth-child(4){width:15%;}
+.Active_Projects table td:nth-child(5){width:15%;}
+.Active_Projects table td:last-child{width:50%;}
+.Active_Projects table tr:nth-child(n+2) td:nth-child(1){ text-align:left; padding-left:5px;padding-right:5px;}
+.Active_Projects table tr:nth-child(n+2) td:nth-child(6){ text-align:left; padding-left:5px;padding-right:5px;}
+
+
+/*Acquisition_Summary*/
+
+.Acquisition_Summary .main_table_title tr td:nth-child(1){width:20%;}
+.Acquisition_Summary .main_table_title tr td:nth-child(n+2){width:10%;}
+.Acquisition_Summary .main_table_title tr:last-child td{ background-image:none; background-color:#B7D3E8;}
+.Acquisition_Summary .main_table_title tr:last-child td:hover{ background-color:#ffc425; cursor:pointer;}
+.Acquisition_Summary table:last-child tr td:nth-child(1){width:5%;}
+.Acquisition_Summary table:last-child tr td:nth-child(2){width:15%;}
+.Acquisition_Summary table:last-child tr td:nth-child(n+3){width:10%;}
+.Acquisition_Summary table:last-child tr.title td{ font-weight:normal;}
+.Acquisition_Summary table:last-child tr.title td:hover{ font-weight:bold;}
+.Acquisition_Summary table:last-child tr:nth-child(n+2) td:nth-child(2){ text-align:left; padding-left:5px;}
+
+
+/*Risk_Assessment*/
+.Risk_Assessment table tr td:nth-child(1){width:6%}
+.Risk_Assessment table tr td:nth-child(2){width:14%}
+.Risk_Assessment table tr td:nth-child(n+3){width:10%}
+.Risk_Assessment table tr:nth-child(n+2) td:first-child{ text-align:center;}
+.Risk_Assessment table tr:nth-child(n+2) td{ text-align:left; padding-left:5px;}
+
+/*Security_Program*/
+.Security_Program p{ margin:0; line-height:24px; font-weight:normal;}
+/*.Security_Program table tr td p:nth-child(even){ background-color:#e4e4e4;}*/
+/*.Security_Program table tr:nth-child(odd) td p:nth-child(odd){ background-color:#f3f3f3;}*/
+/*修改.Security_Program table tr:hover td p{background-color:#E7F0F8;}
+.Security_Program table tr:hover td p:nth-child(even){background-color:#B7D3E8; }*/
+.Security_Program table tr td p:hover{ font-weight:bold;}
+.Security_Program table tr td{ vertical-align:middle;}
+.Security_Program table tr td:nth-child(1){width:22%;}
+.Security_Program table tr td:nth-child(2){width:5%;}
+.Security_Program table tr td:nth-child(3){width:5%;}
+.Security_Program table tr td:nth-child(4){width:30%;}
+.Security_Program table tr td:nth-child(5){width:13%;}
+.Security_Program table tr td:nth-child(6){width:5%;}
+.Security_Program table tr td:nth-child(7){width:10%;}
+.Security_Program table tr td:nth-child(8){width:10%;}
+.Security_Program table:last-child tr:nth-child(n+2) td:nth-child(1){ text-align:left;padding-left:5px;}
+.Security_Program table:last-child tr:nth-child(n+2) td:nth-child(4){ text-align:left;}
+.Security_Program table:last-child tr:nth-child(n+2) td:nth-child(4) p{ padding-left:5px;}
+.Security_Program table:last-child tr:nth-child(n+2) td:nth-child(n+4){padding:0;}
+
+
+/*PCI_Compliance*/
+.PCI_Compliance table tr td:nth-child(1){width:10%;}
+.PCI_Compliance table tr td:nth-child(2){width:10%;}
+.PCI_Compliance table tr td:nth-child(3){width:5%;}
+.PCI_Compliance table tr td:nth-child(4){width:10%;}
+.PCI_Compliance table tr td:nth-child(5){width:5%;}
+.PCI_Compliance table tr td:nth-child(6){width:5%;}
+.PCI_Compliance table tr td:nth-child(7){width:10%;}
+.PCI_Compliance table tr td:nth-child(8){width:5%;}
+.PCI_Compliance table tr td:nth-child(9){width:5%;}
+.PCI_Compliance table tr td:nth-child(10){width:5%;}
+.PCI_Compliance table tr td:nth-child(11){width:10%;}
+.PCI_Compliance table tr td:nth-child(12){width:20%;}
+.PCI_Compliance table:last-child tr:nth-child(n+2) td:nth-child(1){ text-align:left; padding-left:2px;}
+.PCI_Compliance table:last-child tr:nth-child(n+2) td:nth-child(2){ text-align:left; padding-left:2px;}
+.PCI_Compliance table:last-child tr:nth-child(n+2) td:nth-child(3){ text-align:left; padding-left:2px;}
+.PCI_Compliance table:last-child tr:nth-child(n+2) td:nth-child(7){ text-align:left; padding-left:2px;}
+.PCI_Compliance table:last-child tr:nth-child(n+2) td:nth-child(12){ text-align:left; padding-left:2px;}
+
+
+/*Patch_Management*/
+.Patch_Management .main_table_title tr td:nth-child(1){width:22%;}
+.Patch_Management .main_table_title tr td:nth-child(2){width:18%;}
+.Patch_Management .main_table_title tr td:nth-child(3){width:6%;}
+.Patch_Management .main_table_title tr td:nth-child(4){width:54%;}
+.Patch_Management .main_table_title tr:last-child td{ background-image:none; background-color:#B7D3E8;}
+.Patch_Management .main_table_title tr:last-child td:hover{ background-color:#ffc425; cursor:pointer;}
+.Patch_Management table:last-child tr td:nth-child(1){width:22%;}
+.Patch_Management table:last-child tr td:nth-child(n+2){width:6%;}
+.Patch_Management table:last-child tr:nth-child(n+2) td:nth-child(1){ text-align:left; padding-left:2px;}
+
+
+/*Backup_Status*/
+.Backup_Status table tr:hover td{ vertical-align:middle;}
+/*修改.Backup_Status table tr.title:hover td{ vertical-align:top;}*/
+.Backup_Status table tr td:nth-child(1){width:20%;}
+.Backup_Status table tr td:nth-child(2){width:15%;}
+.Backup_Status table tr td:nth-child(3){width:5%;}
+.Backup_Status table tr td:nth-child(4){width:5%;}
+.Backup_Status table tr td:nth-child(5){width:5%;}
+.Backup_Status table tr td:nth-child(6){width:5%;}
+.Backup_Status table tr td:nth-child(7){width:5%;}
+.Backup_Status table tr td:nth-child(8){width:5%;}
+.Backup_Status table tr td:nth-child(9){width:5%;}
+.Backup_Status table tr td:nth-child(10){width:10%;}
+.Backup_Status table tr td:nth-child(11){width:5%;}
+.Backup_Status table tr td:nth-child(12){width:15%;}
+.Backup_Status table tr:nth-child(n+2) td:nth-child(1){ text-align:left; padding-left:2px;}
+.Backup_Status table tr:nth-child(n+2) td:nth-child(2){ text-align:left; padding-left:2px;}
+.Backup_Status table tr:nth-child(n+2) td:nth-child(10){ text-align:left; padding-left:2px;}
+.Backup_Status table tr:nth-child(n+2) td:nth-child(12){ text-align:left; padding-left:2px;}
+
+/*Change_Management*/
+.S_AND_C tr td:nth-child(-n+6){width:10%;}
+.S_AND_C tr td:nth-child(7){width:30%;}
+.S_AND_C tr td:nth-child(8){width:10%;}
+.S_AND_C tr:nth-child(n+2) td:nth-child(5){ text-align:left; padding-left:5px;}
+.S_AND_C tr:nth-child(n+2) td:nth-child(7){ text-align:left; padding-left:5px;}
+
+.Changes_Rolled_back tr td:nth-child(-n+3){width:14%;}
+.Changes_Rolled_back tr td:nth-child(4){width:29%;}
+.Changes_Rolled_back tr td:nth-child(5){width:29%;}
+.Changes_Rolled_back tr:nth-child(n+2) td:nth-child(4){ text-align:left; padding-left:5px;}
+.Changes_Rolled_back tr:nth-child(n+2) td:nth-child(5){ text-align:left; padding-left:5px;}

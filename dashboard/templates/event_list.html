@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+
+
+	
+	
+<div  ng-app="myApp" ng-controller="customersCtrl">
+<table class="table" style="font-size:10" >
+   <thead>
+<tr>
+                        <th> createdtime
+
+                        <th> username
+
+                        <th> details
+
+</tr>
+   </thead>
+
+<tbody >
+  <tr ng-repeat="x in names| filter:Name| orderBy: f : rev"  > 
+        <td width="20%"><%x.createdtime%></td>
+        <td><%x.username%></td>
+        <td><%x.details%></td>
+
+
+  </tr>
+
+</tbody>
+
+</table>
+</div> 
+ 
+ 
+ 
+ 
+<script>
+var myApp = angular.module('myApp', []);
+
+
+// App config
+myApp.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('<%');
+	$interpolateProvider.endSymbol('%>');
+	});
+myApp.controller('customersCtrl', function($scope, $http) {
+   $http.get("/event_list_data")
+
+   .success(function (response)
+        {$scope.names = response.records;});
+});
+</script>
+
+{% endblock %}
+
+

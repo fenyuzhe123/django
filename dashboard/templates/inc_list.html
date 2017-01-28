@@ -1,0 +1,113 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+	
+	
+<div  ng-app="myApp" ng-controller="customersCtrl">
+<p> Filter: <input type="text" ng-model="Name"></p> <P>Last update: {{ updatedate }}</p>
+
+<table class="table table-bordered" style="font-size:10" >
+   <thead>
+<tr>
+                        <th> Number
+                                <button type="button" class="btn btn-default" ng-click="f='number'; rev=!rev ">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> state
+                                <button type="button" class="btn btn-default" ng-click="f='state'; rev=!rev" >
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> short_description
+                                <button type="button" class="btn btn-default" ng-click="f='short_description'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+                        <th> opened_at
+                                <button type="button" class="btn btn-default" ng-click="f='opened_at'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> caller
+                                <button type="button" class="btn btn-default" ng-click="f='caller_id'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> business_service
+                                <button type="button" class="btn btn-default" ng-click="f='u_business_service'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> item_type
+                                <button type="button" class="btn btn-default" ng-click="f='u_item_type'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> service_type
+                                <button type="button" class="btn btn-default" ng-click="f='u_service_type'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> issue_type
+                                <button type="button" class="btn btn-default" ng-click="f='u_issue_type'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						<th> assigned_to		
+                                <button type="button" class="btn btn-default" ng-click="f='assigned_to'; rev=!rev">
+                                         <span  class="glyphicon glyphicon-sort"></span>
+                                </button></th>
+						
+</tr>
+   </thead>
+
+<tbody >
+  <tr ng-repeat="x in names| filter:Name| orderBy: f : rev"> 
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.number %></td>
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.state %></td>
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.short_description %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.opened_at %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.caller_id %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.u_business_service %></td>			
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.u_item_type %></td>	
+        <td  class="charge_table_td" style="padding-right:5px;"><% x.u_service_name %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.u_issue_type %></td>
+		<td  class="charge_table_td" style="padding-right:5px;"><% x.assigned_to %></td>
+		<%x%>
+  </tr>
+
+</tbody>
+
+</table>
+</div> 
+ 
+ 
+ 
+ 
+<script>
+var myApp = angular.module('myApp', []);
+
+
+// App config
+myApp.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('<%');
+	$interpolateProvider.endSymbol('%>');
+	});
+myApp.controller('customersCtrl', function($scope, $http) {
+   $http.get("/inc_list_data")
+
+   .success(function (response)
+        {$scope.names = response.records;});
+});
+</script>
+
+{% endblock %}
+
+
